@@ -1,0 +1,66 @@
+# ==============================================================================
+# FIAP - MBA em Cloud Strategy & Architecture
+# Repositório Oficial: FIAP-2026-CLD-CloudBuilders
+# ==============================================================================
+
+# Python & Ambientes Virtuais
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+*.egg-info/
+dist/
+build/
+
+# Jupyter Notebook & Checkpoints
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# OpenStack, Red Hat Academy & Credenciais de Nuvem
+*-rc
+*-rc*
+*openrc*
+keystonerc*
+*.rc
+openrc.sh
+*credentials*
+*.key
+*.pem
+*.pfx
+.env
+.env.*
+
+# Kubernetes & OpenShift Local Contexts
+.kube/
+kubeconfig
+*.kubeconfig
+kubeconfig.yaml
+
+# Docker & Podman Runtimes
+*.sock
+.docker/
+.podman/
+
+# Arquivos de Sistema & IDEs
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+*~
+
+# Arquivos Temporários de Laboratório e Logs
+logs/
+*.log
+*.tmp
+*.bak
+.tmp/
+
+# 🛡️ Guardrails Docentes: Gabaritos e Soluções (Confidencial)
+*Gabarito*
+*gabarito*
+*Solution*
+*solution*
