@@ -153,7 +153,7 @@ oc get pods -o wide
 Inspect detailed scheduling and runtime events:
 
 ```bash
-oc describe pod -l app=my-web-app
+oc describe pod -l deployment=my-web-app
 ```
 
 Verify in the event logs that the Kubelet scheduled the pod to a worker node, pulled the image via CRI-O, and successfully started the container.
@@ -199,7 +199,7 @@ This laboratory is successfully validated when:
    ```bash
    oc get deployment my-web-app -o yaml
    ```
-   Inspect `spec.template.spec.containers`, noting container ports, image pull policies, and the label selector `app=my-web-app`.
+   Inspect `spec.template.spec.containers`, noting container ports, image pull policies, and the label selector `deployment=my-web-app`.
 
 2. **Interactive In-Container Terminal (`oc rsh`):**  
    Establish an interactive remote shell inside the running container:

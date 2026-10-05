@@ -153,7 +153,7 @@ oc get pods -o wide
 Inspecione os detalhes e eventos de inicialização do Pod:
 
 ```bash
-oc describe pod -l app=my-web-app
+oc describe pod -l deployment=my-web-app
 ```
 
 Verifique nos eventos finais que o Kubelet realizou o agendamento no nó worker, baixou a imagem via CRI-O e iniciou o contêiner com sucesso.
@@ -199,7 +199,7 @@ O laboratório é considerado concluído com sucesso quando:
    ```bash
    oc get deployment my-web-app -o yaml
    ```
-   Localize a seção `spec.template.spec.containers` e identifique as portas configuradas, políticas de pull de imagem e o seletor de labels `app=my-web-app`.
+   Localize a seção `spec.template.spec.containers` e identifique as portas configuradas, políticas de pull de imagem e o seletor de labels `deployment=my-web-app`.
 
 2. **Terminal Interativo no Contêiner (`oc rsh`):**  
    Abra uma sessão interativa dentro do contêiner em execução:

@@ -60,7 +60,7 @@ oc describe svc my-web-app
 
 > **Expected Output (Relevant Snippet):**
 > ```text
-> Selector:          app=my-web-app
+> Selector:          deployment=my-web-app
 > Type:              ClusterIP
 > IP:                172.30.128.45
 > Port:              8080-tcp  8080/TCP
@@ -68,7 +68,7 @@ oc describe svc my-web-app
 > Endpoints:         10.128.2.35:8080
 > ```
 
-*Architectural Insight:* The *Service* holds an immutable virtual IP (`ClusterIP`). It uses the label selector `app=my-web-app` to dynamically forward incoming traffic to the private Pod IP (`10.128.2.35`). This address is only reachable by other services within the cluster's software-defined network (SDN).
+*Architectural Insight:* The *Service* holds an immutable virtual IP (`ClusterIP`). It uses the label selector `deployment=my-web-app` to dynamically forward incoming traffic to the private Pod IP (`10.128.2.35`). This address is only reachable by other services within the cluster's software-defined network (SDN).
 
 ---
 
@@ -126,7 +126,7 @@ Kubernetes operates under the principle of **Continuous Reconciliation**: it con
 
 2. Force the immediate deletion of the Pod, simulating an unhandled system crash:
    ```bash
-   oc delete pod -l app=my-web-app
+   oc delete pod -l deployment=my-web-app
    ```
 
 3. Immediately after the command executes, list the pods in rapid succession:
