@@ -1,7 +1,6 @@
 # Enterprise Multi-Tenant IaaS, Private Cloud & Platform Architecture Blueprint
 
-[![FIAP MBA](https://img.shields.io/badge/FIAP-MBA%20Cloud%20Strategy%20%26%20Architecture-ED145B?logo=fiap&logoColor=white)](https://www.fiap.com.br/mba/mba-em-cloud-strategy-architecture/)
-[![Release](https://img.shields.io/badge/Release-v2026.1.0-007EC6?logo=github)](https://github.com/rafaelmatsuyama/FIAP-2026-CLD-CloudBuilders/releases)
+[![FIAP MBA](https://img.shields.io/badge/FIAP-MBA%20MultiCloud%20Strategy%20%26%20Architecture-ED145B?logo=fiap&logoColor=white)](https://www.fiap.com.br/mba/mba-em-multicloud-strategy-architect/)
 ![RHEL 8/9](https://img.shields.io/badge/RHEL-8%2F9%20Enterprise-EE0000?logo=redhat&logoColor=white)
 ![OpenStack](https://img.shields.io/badge/OpenStack-RHOSP%2016.2%20Train-ED1944?logo=openstack&logoColor=white)
 ![Red Hat OpenShift](https://img.shields.io/badge/OpenShift-4.x%20PaaS-EE0000?logo=redhatopenshift&logoColor=white)
@@ -10,7 +9,7 @@
 ![Code License](https://img.shields.io/badge/Code-Apache%202.0-green.svg)
 ![Content License](https://img.shields.io/badge/Content-CC%20BY--NC--SA%204.0-orange.svg)
 
-> **Official reference architecture and hands-on laboratory suite developed for the [MBA em Cloud Strategy & Architecture](https://www.fiap.com.br/mba/mba-em-cloud-strategy-architecture/) at FIAP.**  
+> **Official reference architecture and hands-on laboratory suite developed for the [MBA em MultiCloud Strategy & Architecture](https://www.fiap.com.br/mba/mba-em-multicloud-strategy-architect/) at FIAP.**  
 > *Covering Private Cloud Foundations (OpenStack / RHOSP CL110), Containerized Control Plane Engineering (Podman / Systemd), Multi-Tenant SDN Isolation, and the Enterprise Transition to Cloud-Native PaaS (Red Hat OpenShift & Kubernetes).*
 
 ---
@@ -36,7 +35,7 @@ This repository establishes an end-to-end, enterprise-grade **Reference Architec
 
 ## 🏗️ End-to-End Architectural Flow
 
-![Red Hat OpenStack Platform CL110 Cluster Topology](assets/cluster_topology.jpg)
+![End-to-End Cloud Infrastructure Lifecycle Flow](assets/architectural_flow.jpg)
 
 ### Lifecycle Architecture Matrix
 
@@ -76,6 +75,8 @@ Modern infrastructure architects do not treat OpenStack and OpenShift as competi
 ---
 
 ## 🚀 Quickstart Guide (Red Hat Academy Environment)
+
+![Red Hat Academy Lab Cluster Topology](assets/cluster_topology.jpg)
 
 ### Prerequisites & Access:
 All hands-on labs are executed on the **Red Hat Academy (CL110 / DO180)** remote lab environment:
@@ -143,11 +144,11 @@ This repository adheres to **Calendar Versioning with Cycle and Patch semantics 
 ```
 
 * **Deterministic Reproducibility:** Each tagged release provides an immutable snapshot where all lab guides, CLI commands, and configurations are guaranteed to execute deterministically without runtime drift.
-* **Cohort Pinning:** To pin your environment to this specific release:
+* **Cohort Pinning:** Tagged releases provide immutable curriculum snapshots for cohorts:
   ```bash
-  git checkout tags/v2026.1.0
+  git checkout tags/vYYYY.CYCLE.PATCH
   ```
-* Formal releases and changelogs are published on the official [GitHub Releases](https://github.com/rafaelmatsuyama/FIAP-2026-CLD-CloudBuilders/releases) page.
+* Formal releases and changelogs are published on the official [GitHub Releases](https://github.com/rafaelmatsuyama/FIAP-CLD-CloudBuilders/releases) page.
 
 ---
 
@@ -159,11 +160,13 @@ This repository adheres to **Calendar Versioning with Cycle and Patch semantics 
 
 * 🌐 **LinkedIn:** [linkedin.com/in/rafaelmatsuyama](https://www.linkedin.com/in/rafaelmatsuyama/)
 * 🐙 **GitHub:** [github.com/rafaelmatsuyama](https://github.com/rafaelmatsuyama)
-* 🏫 **Institution:** [FIAP — MBA em Cloud Strategy & Architecture](https://www.fiap.com.br/mba/mba-em-cloud-strategy-architecture/)
+* 🏫 **Institution:** [FIAP — MBA em MultiCloud Strategy & Architecture](https://www.fiap.com.br/mba/mba-em-multicloud-strategy-architect/)
 
 ---
 
 ## 📄 License & Intellectual Property
 
-* **Code & Scripts:** Licensed under the **[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)**.
-* **Educational Materials & Documentation:** Licensed under the **[Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/)**.
+This repository employs a dual-licensing model (see full terms in [`LICENSE`](./LICENSE)):
+
+* **Code, Scripts & Configurations:** Licensed under the **[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)**.
+* **Educational Materials & Courseware:** Licensed under the **[Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/)**.
