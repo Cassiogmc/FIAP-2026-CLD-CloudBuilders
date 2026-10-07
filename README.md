@@ -1,7 +1,6 @@
 # Enterprise Multi-Tenant IaaS, Private Cloud & Platform Architecture Blueprint
 
-[![FIAP MBA](https://img.shields.io/badge/FIAP-MBA%20Cloud%20Strategy%20%26%20Architecture-ED145B?logo=fiap&logoColor=white)](https://www.fiap.com.br/mba/mba-em-cloud-strategy-architecture/)
-[![Release](https://img.shields.io/badge/Release-v2026.1.0-007EC6?logo=github)](https://github.com/rafaelmatsuyama/FIAP-2026-CLD-CloudBuilders/releases)
+[![FIAP MBA](https://img.shields.io/badge/FIAP-MBA%20MultiCloud%20Strategy%20%26%20Architecture-ED145B?logo=fiap&logoColor=white)](https://www.fiap.com.br/mba/mba-em-multicloud-strategy-architect/)
 ![RHEL 8/9](https://img.shields.io/badge/RHEL-8%2F9%20Enterprise-EE0000?logo=redhat&logoColor=white)
 ![OpenStack](https://img.shields.io/badge/OpenStack-RHOSP%2016.2%20Train-ED1944?logo=openstack&logoColor=white)
 ![Red Hat OpenShift](https://img.shields.io/badge/OpenShift-4.x%20PaaS-EE0000?logo=redhatopenshift&logoColor=white)
@@ -10,7 +9,7 @@
 ![Code License](https://img.shields.io/badge/Code-Apache%202.0-green.svg)
 ![Content License](https://img.shields.io/badge/Content-CC%20BY--NC--SA%204.0-orange.svg)
 
-> **Official reference architecture and hands-on laboratory suite developed for the [MBA em Cloud Strategy & Architecture](https://www.fiap.com.br/mba/mba-em-cloud-strategy-architecture/) at FIAP.**  
+> **Official reference architecture and hands-on laboratory suite developed for the [MBA em MultiCloud Strategy & Architecture](https://www.fiap.com.br/mba/mba-em-multicloud-strategy-architect/) at FIAP.**  
 > *Covering Private Cloud Foundations (OpenStack / RHOSP CL110), Containerized Control Plane Engineering (Podman / Systemd), Multi-Tenant SDN Isolation, and the Enterprise Transition to Cloud-Native PaaS (Red Hat OpenShift & Kubernetes).*
 
 ---
@@ -36,7 +35,7 @@ This repository establishes an end-to-end, enterprise-grade **Reference Architec
 
 ## 🏗️ End-to-End Architectural Flow
 
-![Red Hat OpenStack Platform CL110 Cluster Topology](assets/cluster_topology.jpg)
+![End-to-End Cloud Infrastructure Lifecycle Flow](assets/architectural_flow.jpg)
 
 ### Lifecycle Architecture Matrix
 
@@ -57,8 +56,13 @@ The repository is structured into self-contained, progressive laboratory modules
 
 | Module | Guides / Roteiros | Enterprise Pain Point | Technical Solution & Modern Stack | Technical Tags | Key Deliverable & Artifact |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| [`lab01-openstack-iaas`](./labs/lab01-openstack-iaas) | [🇧🇷 PT-BR](./labs/lab01-openstack-iaas/Lab%2001%20-%20Roteiro%20Aluno.md) \| [🇺🇸 EN](./labs/lab01-openstack-iaas/Lab%2001%20-%20Student%20Guide.md) | Slow, manual VM provisioning tickets causing developer friction and shadow IT | Self-service IaaS instance lifecycle via OpenStack CLI & Horizon web console | `iaas`, `openstack-cli`, `keystone`, `nova`, `neutron`, `horizon` | Active cloud instance (`finance-server1`), custom tenant network, and serial console telemetry |
-| [`lab02-openstack-controller`](./labs/lab02-openstack-controller) | [🇧🇷 PT-BR](./labs/lab02-openstack-controller/Lab%2002%20-%20Roteiro%20Aluno.md) \| [🇺🇸 EN](./labs/lab02-openstack-controller/Lab%2002%20-%20Student%20Guide.md) | Opaque monolith control planes that are difficult to troubleshoot, patch, and monitor | In-depth auditing of containerized daemons in Podman, Systemd conmon, and API logs | `rhosp`, `podman`, `systemd`, `conmon`, `microservices`, `sre` | Live daemon audit report, container log analysis, and Control Plane vs Data Plane separation proof |
+| [`lab01-openstack-iaas`](./lab01-openstack-iaas) | [🇧🇷 PT-BR](./lab01-openstack-iaas/Lab%2001%20-%20Roteiro%20Aluno.md) \| [🇺🇸 EN](./lab01-openstack-iaas/Lab%2001%20-%20Student%20Guide.md) | Slow, manual VM provisioning tickets causing developer friction and shadow IT | Self-service IaaS instance lifecycle via OpenStack CLI & Horizon web console | `iaas`, `openstack-cli`, `keystone`, `nova`, `neutron`, `horizon` | Active cloud instance (`finance-server1`), custom tenant network, and serial console telemetry |
+| [`lab02-openstack-controller`](./lab02-openstack-controller) | [🇧🇷 PT-BR](./lab02-openstack-controller/Lab%2002%20-%20Roteiro%20Aluno.md) \| [🇺🇸 EN](./lab02-openstack-controller/Lab%2002%20-%20Student%20Guide.md) | Opaque monolith control planes that are difficult to troubleshoot, patch, and monitor | In-depth auditing of containerized daemons in Podman, Systemd conmon, and API logs | `rhosp`, `podman`, `systemd`, `conmon`, `microservices`, `sre` | Live daemon audit report, container log analysis, and Control Plane vs Data Plane separation proof |
+| [`lab03-openshift-deploy`](./lab03-openshift-deploy) | [🇧🇷 PT-BR](./lab03-openshift-deploy/Lab%2003%20-%20Roteiro%20Aluno.md) \| [🇺🇸 EN](./lab03-openshift-deploy/Lab%2003%20-%20Student%20Guide.md) | Inconsistent manual app deployments, host port collisions, and lack of visual governance | Declarative microservice delivery on Red Hat OpenShift via `oc new-app` and Developer Topology view | `ocp4`, `openshift-cli`, `kubernetes`, `declarative-deploy`, `scc`, `topology-view` | Containerized web service deployed, monitored via Topology ring, and verified through CLI introspection |
+| [`lab04-openshift-resilience`](./lab04-openshift-resilience) | [🇧🇷 PT-BR](./lab04-openshift-resilience/Lab%2004%20-%20Roteiro%20Aluno.md) \| [🇺🇸 EN](./lab04-openshift-resilience/Lab%2004%20-%20Student%20Guide.md) | Service downtime from process crashes, lack of automated L7 routing, and rigid capacity limits | Ingress routing via OpenShift Routes (HAProxy), automated Pod Self-Healing, and elastic replica scaling | `openshift-routes`, `ingress-l7`, `clusterip`, `self-healing`, `horizontal-scaling`, `resilience` | Public corporate FQDN route, proof of zero-downtime Pod chaos recovery, and 3-replica scaled application |
+| [`lab05-openshift-probes`](./lab05-openshift-probes) | [🇧🇷 PT-BR](./lab05-openshift-probes/Lab%2005%20-%20Roteiro%20Aluno.md) \| [🇺🇸 EN](./lab05-openshift-probes/Lab%2005%20-%20Student%20Guide.md) | Undetected container deadlocks, broken L7 routing, plaintext credentials, and pod filesystem ephemerality | 12-factor env vars, Kubernetes Secrets (Base64), autonomous Liveness/Readiness Probes, and 1Gi PVC storage attachment | `ocp4`, `health-checks`, `liveness-probe`, `readiness-probe`, `secrets`, `pvc`, `storage` | Auto-healing deployment with configured probes, isolated secret injection, and persistent volume mount |
+| [`lab06-openshift-s2i`](./lab06-openshift-s2i) | [🇧🇷 PT-BR](./lab06-openshift-s2i/Lab%2006%20-%20Roteiro%20Aluno.md) \| [🇺🇸 EN](./lab06-openshift-s2i/Lab%2006%20-%20Student%20Guide.md) | External Git dependency friction, image build overhead without Dockerfiles, and rigid SCC root restrictions | Air-gapped Rootless Gitea on port 3000, OpenShift Source-to-Image (S2I) pipelines, BuildConfigs, and ImageStreams | `s2i`, `gitea`, `rootless`, `buildconfig`, `imagestream`, `ci-cd`, `webhooks` | Self-hosted private Git server, automated S2I build stream, and zero-downtime application continuous rollout |
+| [`lab07-openshift-capstone`](./lab07-openshift-capstone) | [🇧🇷 PT-BR](./lab07-openshift-capstone/Lab%2007%20-%20Roteiro%20Aluno.md) \| [🇺🇸 EN](./lab07-openshift-capstone/Lab%2007%20-%20Student%20Guide.md) | Fragmented architectures, state loss during database crashes, and lack of end-to-end multi-tier integration | Full-stack cloud-native deployment: S2I Node.js frontend, persistent MySQL/MariaDB backend, internal DNS discovery, and chaos audit | `capstone`, `multi-tier`, `mysql`, `mariadb`, `dns-discovery`, `s2i`, `chaos-engineering`, `resilience` | Resilient Guestbook & Example Health multi-tier platform surviving database pod destruction with zero transactional data loss |
 
 ---
 
@@ -74,6 +78,8 @@ Modern infrastructure architects do not treat OpenStack and OpenShift as competi
 ---
 
 ## 🚀 Quickstart Guide (Red Hat Academy Environment)
+
+![Red Hat Academy Lab Cluster Topology](assets/cluster_topology.jpg)
 
 ### Prerequisites & Access:
 All hands-on labs are executed on the **Red Hat Academy (CL110 / DO180)** remote lab environment:
@@ -141,11 +147,11 @@ This repository adheres to **Calendar Versioning with Cycle and Patch semantics 
 ```
 
 * **Deterministic Reproducibility:** Each tagged release provides an immutable snapshot where all lab guides, CLI commands, and configurations are guaranteed to execute deterministically without runtime drift.
-* **Cohort Pinning:** To pin your environment to this specific release:
+* **Cohort Pinning:** Tagged releases provide immutable curriculum snapshots for cohorts:
   ```bash
-  git checkout tags/v2026.1.0
+  git checkout tags/vYYYY.CYCLE.PATCH
   ```
-* Formal releases and changelogs are published on the official [GitHub Releases](https://github.com/rafaelmatsuyama/FIAP-2026-CLD-CloudBuilders/releases) page.
+* Formal releases and changelogs are published on the official [GitHub Releases](https://github.com/rafaelmatsuyama/FIAP-CLD-CloudBuilders/releases) page.
 
 ---
 
@@ -157,11 +163,13 @@ This repository adheres to **Calendar Versioning with Cycle and Patch semantics 
 
 * 🌐 **LinkedIn:** [linkedin.com/in/rafaelmatsuyama](https://www.linkedin.com/in/rafaelmatsuyama/)
 * 🐙 **GitHub:** [github.com/rafaelmatsuyama](https://github.com/rafaelmatsuyama)
-* 🏫 **Institution:** [FIAP — MBA em Cloud Strategy & Architecture](https://www.fiap.com.br/mba/mba-em-cloud-strategy-architecture/)
+* 🏫 **Institution:** [FIAP — MBA em MultiCloud Strategy & Architecture](https://www.fiap.com.br/mba/mba-em-multicloud-strategy-architect/)
 
 ---
 
 ## 📄 License & Intellectual Property
 
-* **Code & Scripts:** Licensed under the **[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)**.
-* **Educational Materials & Documentation:** Licensed under the **[Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/)**.
+This repository employs a dual-licensing model (see full terms in [`LICENSE`](./LICENSE)):
+
+* **Code, Scripts & Configurations:** Licensed under the **[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)**.
+* **Educational Materials & Courseware:** Licensed under the **[Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/)**.
